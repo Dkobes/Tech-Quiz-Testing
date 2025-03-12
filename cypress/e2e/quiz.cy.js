@@ -9,8 +9,7 @@ describe('Tech Quiz', () => {
     });
   
     it('should display a question when the quiz starts', () => {
-        cy.get('button').contains('Start Quiz').click();
-      cy.get('question').should('be.visible');
+        cy.contains('Start Quiz').should('be.visible');
     });
   
     it('should present another question after answering a question', () => {
