@@ -19,6 +19,7 @@ npm run test:component
 
 ## Usage
 This video shows how to go through and run the testing commands that go along with the code itself
+https://drive.google.com/file/d/1P1JT8tWTTNNP7m-E2vjBbZMeIot2oy3R/view
 
 
 ## Collaborators
