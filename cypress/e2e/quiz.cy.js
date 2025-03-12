@@ -13,9 +13,11 @@ describe('Tech Quiz', () => {
     });
   
     it('should present another question after answering a question', () => {
-        cy.get('button').contains('Start Quiz').click();
-      cy.get('.btn').first().click();
-      cy.get('question').should('be.visible');
+        cy.contains('Start Quiz').click();
+
+        cy.get('.btn').first().click();
+
+        cy.get('h2', { timeout: 10000 }).should('be.visible');
     });
   
     it('should display the score when the quiz is over', () => {
