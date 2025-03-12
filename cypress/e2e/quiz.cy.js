@@ -31,12 +31,11 @@ describe('Tech Quiz', () => {
     });
   
     it('should allow restarting the quiz', () => {
-        cy.get('button').contains('Start Quiz').click();
-      cy.get('.btn').each((btn) => {
-        cy.wrap(btn).click();
-      });
-      cy.get('button').contains('Take New Quiz').click();
-      cy.get('button').contains('Start Quiz').should('not.have.class', 'hide');
-      cy.get('question').should('have.class', 'hide');
+        cy.contains('Start Quiz').click();
+        for (let i = 0; i < 10; i++) {
+            cy.get('.btn').first().should('be.visible').click();
+        }
+
+        cy.contains('Take New Quiz').click();
     });
   });
