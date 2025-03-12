@@ -21,12 +21,13 @@ describe('Tech Quiz', () => {
     });
   
     it('should display the score when the quiz is over', () => {
-        cy.get('button').contains('Start Quiz').click();
-      cy.get('.btn').each((btn) => {
-        cy.wrap(btn).click();
-      });
-      cy.get('score').should('not.have.class', 'hide');
-      cy.get('score').should('be.visible');
+        cy.contains('Start Quiz').click();
+        for (let i = 0; i < 10; i++) {
+            cy.get('.btn').first().should('be.visible').click();
+        }
+
+        cy.contains('Quiz Completed').should('be.visible');
+        cy.contains(/Your score: \d+\/10/).should('be.visible');
     });
   
     it('should allow restarting the quiz', () => {
